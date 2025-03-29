@@ -32,13 +32,10 @@ module.exports.userRegister = async (req, res) => {
             password: hashPassword,
         });
 
-        // Remove password from response
-        newUser.password = undefined;
-
         return res.status(201).json({
             message: 'User registered successfully',
             success: true,
-            user: newUser,
+            newUser,
         });
 
 
